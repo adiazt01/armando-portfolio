@@ -11,12 +11,13 @@ const {
 	subheading,
 	date,
 	imagePath,
+	isOnline,
 	altText,
 	imageClass
 } = Astro.props
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}')
 
-if (imagePath) {
+if (imagePath && !isOnline) {
 	if (!images[imagePath])
 		throw new Error(`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`)
 }
@@ -31,10 +32,24 @@ if (imagePath) {
 	href={href}
 >
 	{
-		imagePath && (
+		imagePath && !isOnline && (
 			<Image
 				src={images[imagePath]()}
 				alt={altText}
+				width={100}
+				height={100}
+				class={cn('mb-3 md:absolute md:mb-0', imageClass)}
+				loading='eager'
+			/>
+		)
+	}
+	{
+		imagePath && isOnline && (
+			<Image
+				src={imagePath}
+				alt={altText}
+				width={100}
+				height={100}
 				class={cn('mb-3 md:absolute md:mb-0', imageClass)}
 				loading='eager'
 			/>

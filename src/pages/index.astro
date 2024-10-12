@@ -12,10 +12,10 @@ import astro from '../assets/about-astro.png'
 
 import { getAllPosts, sortMDByDate } from '@/utils'
 
-const languages = ['lorem', 'ipsum']
-const frontend = ['lorem', 'ipsum', 'lorem', 'ipsum', 'lorem', 'ipsum', 'lorem']
-const backend = ['lorem', 'ipsum', 'lorem', 'ipsum']
-const others = ['lorem', 'ipsum', 'lorem', 'ipsum', 'lorem']
+const languages = ['JavaScript', 'TypeScript', 'Python']
+const frontend = ['HTML', 'CSS', 'React', 'TailwindCSS']
+const backend = ['Express', 'MongoDB', 'PostgreSQL', 'NestJS', 'Prisma']
+const others = ['Supabase', 'Firebase', 'Git', 'Docker', 'WebSockets']
 
 const MAX_POSTS = 10
 const allPosts = await getAllPosts()
@@ -26,16 +26,18 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 	<div class='flex w-full flex-col gap-y-10'>
 		<section class='flex flex-col items-center gap-y-7'>
 			<Image
-				src={astro}
+				src='https://media.licdn.com/dms/image/v2/D4E03AQHkH8dMUIOR-Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1726599367018?e=1733961600&v=beta&t=VogTv9BQ9n_29lwqXgQMEWW9m_exY6j43SDW8Y1bZLg'
+				width={100}
+				height={100}
 				alt='profile photo'
-				class='h-28 w-auto rounded-full bg-[#FFBE98] p-2'
+				class='h-28 w-auto rounded-full'
 				loading='eager'
 			/>
+			<!-- TODO Change for my image profile -->
 
 			<div class='flex flex-col items-center gap-y-4'>
-				<h1 class='text-3xl font-bold'>Lorem ipsum dolor</h1>
-				<a
-					href='https://github.com/srleom/astro-theme-resume.git'
+				<h1 class='text-3xl font-bold'>Armando Diaz</h1>
+				<div
 					class='flex flex-row items-center gap-x-3 rounded-3xl border border-input px-4 py-2 text-sm shadow-sm transition-all hover:shadow-md'
 				>
 					<span class='relative flex items-center justify-center'>
@@ -45,10 +47,10 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 						<span class='relative inline-flex h-2 w-2 rounded-full bg-green-400'></span>
 					</span>
 
-					<p class='font-medium'>Get free template</p>
-				</a>
+					<p class='font-medium'>Disponible para trabajo</p>
+				</div>
 				<div class='flex flex-wrap justify-center gap-x-7 gap-y-3'>
-					<Label title='Lorem Ipsum'>
+					<Label title='Full Stack Developer'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
 							><path
 								fill='currentColor'
@@ -56,7 +58,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 							></path></svg
 						>
 					</Label>
-					<Label title='Ipsum'>
+					<Label title='Bolivar, Venezuela'>
 						<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' class='h-5 w-5' slot='icon'
 							><path
 								fill='currentColor'
@@ -65,9 +67,9 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 						>
 					</Label>
 					<Label
-						title='Connect on Linkedin'
+						title='Linkedin'
 						as='a'
-						href='https://www.linkedin.com/in/example/'
+						href='https://www.linkedin.com/in/armando-diaz-291385251/'
 						target='_blank'
 					>
 						<svg
@@ -85,12 +87,11 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			</div>
 		</section>
 
-		<Section title='About'>
+		<Section title='Sobre mi'>
 			<p class='text-muted-foreground'>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis atque quia omnis
-				consectetur, voluptas praesentium veniam blanditiis ratione asperiores accusantium laborum
-				odit commodi quis deserunt incidunt et dolor iure ut! Lorem ipsum dolor sit, amet
-				consectetur adipisicing elit. Alias quia, doloribus ut beatae perspiciatis voluptatibus.
+				Soy desarrollador Full Stack con experiencia en el desarrollo de apliaciones web. Como
+				entusiasta de la tecnologia y la programación, me gusta aprender cosas nuevas y compartir
+				mis conocimientos con los demás
 			</p>
 		</Section>
 		{
@@ -107,60 +108,79 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			)
 		}
 
-		<Section title='Experience'>
+		<Section title='Experiencia'>
 			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-12 w-auto md:-left-16'
+				heading='Nolatech'
+				subheading='Backend Developer'
+				date='Julio 2024 - Octubre 2024'
+				imagePath='https://media.licdn.com/dms/image/v2/C4E0BAQEmohNHWRw2jA/company-logo_200_200/company-logo_200_200/0/1630645917854?e=1736985600&v=beta&t=jax93fixd3MQMs7Zeq0qnv4do0ch4FwWdzCodwHCAA0'
+				isOnline={true}
+				altText='Nolatech'
+				imageClass='h-12 rounded w-auto md:-left-16'
 			>
 				<ul class='ml-4 list-disc text-muted-foreground'>
 					<li>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
-						molestiae laboriosam pariatur!
-
-						<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
+						Optimice el rendimiento de la aplicación al reducir en un 20% el tiempo de respuesta de
+						las consultas NoSQL, gracias a la refactorización de consultas y la implementación de
+						indexaciones adecuadas. Esto resultó en una mejora notable en la experiencia del
+						usuario.
+					</li>
+					<li>
+						Implementé una arquitectura de microservicios utilizando NestJS y Docker para mejorar la
+						escalabilidad y el mantenimiento de la aplicación, mientras a su vez desarrollaba
+						aplicaciones monolíticas.
+					</li>
+					<li>
+						Trabajé en estrecha colaboración con equipos de frontend utilizando Git y Github
+						Projects para asegurar la entrega a tiempo de las funcionalidades.
 					</li>
 				</ul>
 			</Card>
 			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-12 w-auto md:-left-16'
-			/>
-		</Section>
-
-		<Section title='Education'>
-			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
-				date='Dec 2022 - Nov 2023'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-12 w-auto md:-left-16'
+				heading='Potenzify'
+				subheading='Full Stack Developer'
+				date='Mayo 2024 - Julio 2024'
+				imagePath='https://media.licdn.com/dms/image/v2/D4D0BAQEqcuN_ZfNlvA/company-logo_100_100/company-logo_100_100/0/1727427057213/potenzify_logo?e=1736985600&v=beta&t=WED3B8WuJ677F6yb6NLzSEQelI80nd0GQyDk-PFepkI'
+				isOnline={true}
+				altText='Potenzify'
+				imageClass='h-12 rounded w-auto md:-left-16'
 			>
 				<ul class='ml-4 list-disc text-muted-foreground'>
 					<li>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore debitis recusandae, ut
-						molestiae laboriosam pariatur!
-
-						<li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, pariatur!</li>
+						A través de una cuidadosa evaluación de las necesidades del proyecto, seleccioné y
+						configuré Next.js como framework web para aprovechar al máximo sus características más
+						recientes, como React Server Components y Server Actions. Los estilos y componentes
+						usados fueron de tecnologías tales como Tailwind y shadcn/ui.
+					</li>
+					<li>
+						Integré soluciones de inteligencia artificial con el SDK de Vercel para personalizar la
+						experiencia del usuario. Implementé un sistema de quiz para recopilar datos y utilizar
+						algoritmos de aprendizaje automático para clasificar a los usuarios y proporcionar
+						feedback personalizado.
+					</li>
+					<li>
+						Integré Auth0 con NextAuth para crear una solución de autenticación robusta y eficiente
+						para poder iniciar sesión con Google y correo junto a su contraseña.
 					</li>
 				</ul>
 			</Card>
 			<Card
-				heading='Lorem Ipsum'
-				subheading='Sit amet consectetur'
+				heading='Silvera Enterprises'
+				subheading='Frontend Developer'
 				date='Dec 2022 - Nov 2023'
-				imagePath='/src/assets/about-astro.png'
+				imagePath='https://media.licdn.com/dms/image/v2/C560BAQE8EkLOervfrQ/company-logo_200_200/company-logo_200_200/0/1678929510246/silvera_enterprises_logo?e=1736985600&v=beta&t=UtHwmL80fLwYciH7TWki8CezypbG3dGw1qo3BdAEb6Q'
+				isOnline={true}
 				altText='Lorem, ipsum dolor sit'
-				imageClass='h-12 w-auto md:-left-16'
-			/>
+				imageClass='h-12 rounded w-auto md:-left-16'
+			>
+				<ul class='ml-4 list-disc text-muted-foreground'>
+					<li>
+						Desarrollé un sitio web personalizado utilizando WordPress, Custom Templates y ACF. Creé
+						un diseño moderno y responsivo, optimizado para SEO. Implementé un sistema de gestión de
+						contenido intuitivo para que el cliente pudiera actualizar fácilmente el contenido.
+					</li>
+				</ul>
+			</Card>
 		</Section>
 
 		<Section title='Projects'>
@@ -184,26 +204,51 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			</div>
 		</Section>
 
-		<Section title='Certifications'>
+		<Section title='Certificaciones'>
 			<Card
 				as='a'
-				heading='Lorem ipsum, dolor sit amet consectetur adipisicing.'
-				subheading='Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dicta magni consequuntur corrupti.'
+				heading='Responsive Web Design'
+				subheading='Aprendí los lenguajes que los desarrolladores usan para construir páginas web: HTML (Lenguaje de Marcado de Hipertexto) para el contenido, y CSS (Hojas de Estilo en Cascada) para el diseño.'
 				date='Mar 2024 - Mar 2024'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-11 w-auto md:-left-16'
-				href='https://www.google.com'
+				imagePath='https://media.licdn.com/dms/image/v2/C4E0BAQGLKj3JHcof0w/company-logo_100_100/company-logo_100_100/0/1630639684997/free_code_camp_logo?e=1736985600&v=beta&t=bq0S9pVrrAmpcb4uSV1CqJIpZ5Q_Nbdsfp54NOxEJu4'
+				altText='Responsive Web Design'
+				imageClass='h-11 rounded border w-auto md:-left-16'
+				isOnline={true}
+				href='https://www.freecodecamp.org/certification/fccc117c7bb-b7ee-4660-8ae3-663357be41a0/responsive-web-design'
 			/>
 			<Card
 				as='a'
-				heading='Lorem ipsum, dolor sit amet'
-				subheading='Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dicta.'
-				date='Mar 2029 - Mar 2032'
-				imagePath='/src/assets/about-astro.png'
-				altText='Lorem, ipsum dolor sit'
-				imageClass='h-11 w-auto md:-left-16'
-				href='https://www.google.com'
+				heading='JavaScript Algorithms and Data Structures'
+				subheading='Aprendí los fundamentos de JavaScript incluyendo variables, arreglos, objetos, bucles y funciones.'
+				date='Mar 2024 - Mar 2024'
+				imagePath='https://media.licdn.com/dms/image/v2/C4E0BAQGLKj3JHcof0w/company-logo_100_100/company-logo_100_100/0/1630639684997/free_code_camp_logo?e=1736985600&v=beta&t=bq0S9pVrrAmpcb4uSV1CqJIpZ5Q_Nbdsfp54NOxEJu4'
+				s
+				altText='JavaScript Algorithms and Data Structures'
+				imageClass='h-11 rounded border w-auto md:-left-16'				
+				isOnline={true}
+				href='https://www.freecodecamp.org/certification/fccc117c7bb-b7ee-4660-8ae3-663357be41a0/javascript-algorithms-and-data-structures'
+			/>
+			<Card
+				as='a'
+				heading='Front End Development Libraries'
+				subheading='Aprendí cómo estilizar mi sitio rápidamente con Bootstrap. Añadí lógica a mis estilos CSS y los extendí con Sass.'
+				date='Mar 2024 - Mar 2024'
+				imagePath='https://media.licdn.com/dms/image/v2/C4E0BAQGLKj3JHcof0w/company-logo_100_100/company-logo_100_100/0/1630639684997/free_code_camp_logo?e=1736985600&v=beta&t=bq0S9pVrrAmpcb4uSV1CqJIpZ5Q_Nbdsfp54NOxEJu4'
+				altText='Front End Development Libraries'
+				imageClass='h-11 rounded border w-auto md:-left-16'				
+				isOnline={true}
+				href='https://www.freecodecamp.org/certification/fccc117c7bb-b7ee-4660-8ae3-663357be41a0/data-visualization'
+			/>
+			<Card
+				as='a'
+				heading='Data Visualization'
+				subheading='Aprendí a crear gráficos, diagramas y mapas para presentar diferentes tipos de datos con la biblioteca D3.js.'
+				date='Mar 2024 - Mar 2024'
+				imagePath='https://media.licdn.com/dms/image/v2/C4E0BAQGLKj3JHcof0w/company-logo_100_100/company-logo_100_100/0/1630639684997/free_code_camp_logo?e=1736985600&v=beta&t=bq0S9pVrrAmpcb4uSV1CqJIpZ5Q_Nbdsfp54NOxEJu4'
+				altText='Data Visualization'
+				imageClass='h-11 rounded border w-auto md:-left-16'				
+				isOnline={true}
+				href='https://www.freecodecamp.org/learn/data-visualization/'
 			/>
 		</Section>
 
@@ -214,17 +259,4 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 			<SkillLayout title='Others' skills={others} />
 		</Section>
 	</div>
-	<a
-		href='https://github.com/srleom/astro-theme-resume.git'
-		class='mt-16 flex flex-row items-center gap-x-3 rounded-3xl border border-input px-4 py-2 text-sm shadow-sm transition-all hover:shadow-md'
-	>
-		<span class='relative flex items-center justify-center'>
-			<span
-				class='absolute inline-flex h-2 w-2 animate-ping rounded-full border border-green-400 bg-green-400 opacity-75'
-			></span>
-			<span class='relative inline-flex h-2 w-2 rounded-full bg-green-400'></span>
-		</span>
-
-		<p class='font-medium'>Get free template</p>
-	</a>
 </PageLayout>
